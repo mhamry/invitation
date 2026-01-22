@@ -1,6 +1,7 @@
 body {
   font-size: 1.5rem;
   min-height: 5000px;
+
   /* color: white; */
 }
 
@@ -292,6 +293,59 @@ h1 {
   .galery .utama {
     width: 100wh !important;
     height: 100vh !important;
+  }
+
+  .slider-box {
+    border-top-right-radius: 80%;
+    overflow: hidden;
+  }
+  .slider-inverted-box {
+    border-top-left-radius: 80%;
+    overflow: hidden;
+  }
+
+  .slider {
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .slide {
+    height: 250px;
+  }
+  .slide img {
+    height: 250px;
+  }
+
+  .slider::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background-image: url("image/home-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .widged-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* PENTING */
+  }
+
+  .widged-text {
+    display: inline-block;
+    transform: rotate(-90deg);
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    letter-spacing: 2px;
   }
 
   /* fullscreen di hp */
