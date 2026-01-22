@@ -1,7 +1,7 @@
 .simply-countdown-circle {
   --sc-circle-primary: #6366f1;
   --sc-circle-secondary: #818cf8;
-  --sc-circle-bg: #1e1b4b;
+  --sc-circle-bg: #ff0087;
   --sc-circle-text: #fff;
   display: flex;
   flex-wrap: wrap;
@@ -65,7 +65,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .simply-countdown-circle {
     gap: 0.5rem; /* kecilkan jarak antar lingkaran */
   }
