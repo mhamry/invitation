@@ -342,10 +342,17 @@ h1 {
   .widged-text {
     display: inline-block;
     transform: rotate(-90deg);
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     white-space: nowrap;
     letter-spacing: 2px;
+  }
+
+  .card-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: bold;
   }
 
   /* Ubah durasi & efek transisi */
@@ -353,6 +360,19 @@ h1 {
     transition:
       transform 2.2s ease-in-out,
       opacity 2.2s ease-in-out;
+  }
+
+  /* ubah arah carousel */
+  /* Membalik arah slide carousel (kiri → kanan) */
+  /* Carousel atas: kiri → kanan */
+  .reverse-carousel .carousel-item-next:not(.carousel-item-start),
+  .reverse-carousel .active.carousel-item-end {
+    transform: translateX(-100%);
+  }
+
+  .reverse-carousel .carousel-item-prev:not(.carousel-item-end),
+  .reverse-carousel .active.carousel-item-start {
+    transform: translateX(100%);
   }
 
   /* fullscreen di hp */
