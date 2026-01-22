@@ -16,7 +16,7 @@ body {
   top: 0;
   left: 0;
   position: absolute;
-  background-image: url("https://picsum.photos/200/300");
+  background-image: url("image/utama/3.png");
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -30,7 +30,8 @@ body {
 
 h1 {
   font-family: "Sacramento", sans-serif;
-  font-size: 4rem;
+  font-size: 6rem;
+  color: var(--pink);
 }
 
 .mynavbar {
