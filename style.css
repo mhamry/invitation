@@ -348,27 +348,34 @@ h1 {
     letter-spacing: 2px;
   }
 
+  /* Ubah durasi & efek transisi */
+  .satu {
+    transition:
+      transform 2.2s ease-in-out,
+      opacity 2.2s ease-in-out;
+  }
+
   /* fullscreen di hp */
-  .ekko-lightbox .modal-dialog {
+  .lightbox .modal-dialog {
     margin: 0;
     max-width: 100%;
     width: 100%;
     height: 100%;
   }
 
-  .ekko-lightbox .modal-content {
+  .lightbox .modal-content {
     height: 100%;
     border-radius: 0;
   }
 
-  .ekko-lightbox .modal-body {
+  .lightbox .modal-body {
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .ekko-lightbox img {
+  .lightbox img {
     max-height: 100vh;
     width: auto;
   }
