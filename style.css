@@ -418,22 +418,4 @@ h1 {
     opacity: 1;
     transform: scale(1);
   }
-
-  .fadeout {
-    height: 100vh; /* setinggi layar */
-    width: 100%;
-  }
-
-  .fadeout,
-  .fadeout .carousel,
-  .fadeout .carousel-inner,
-  .fadeout .carousel-item {
-    height: 100%;
-  }
-
-  .fadeout img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* isi layar tanpa gepeng */
-  }
 }
