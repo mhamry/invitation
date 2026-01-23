@@ -406,6 +406,19 @@ h1 {
     width: auto;
   }
 
+  .carousel-fade .carousel-item {
+    opacity: 0;
+    transform: scale(1.05);
+    transition:
+      opacity 2.5s ease,
+      transform 2.5s ease;
+  }
+
+  .carousel-fade .carousel-item.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
   .fadeout {
     height: 100vh; /* setinggi layar */
     width: 100%;
@@ -422,18 +435,5 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover; /* isi layar tanpa gepeng */
-  }
-
-  .carousel-fade .carousel-item {
-    opacity: 0;
-    transform: scale(1.05);
-    transition:
-      opacity 2.5s ease,
-      transform 2.5s ease;
-  }
-
-  .carousel-fade .carousel-item.active {
-    opacity: 1;
-    transform: scale(1);
   }
 }
