@@ -4,15 +4,15 @@
   --sc-circle-bg: #ff0087;
   --sc-circle-text: #fff;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
   font-family: Inter, sans-serif;
 }
 .simply-countdown-circle > .simply-section {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   padding: 1rem;
   display: flex;
   align-items: center;

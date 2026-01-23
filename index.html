@@ -29,8 +29,36 @@
         <br><br>
         <!-- <div class="simply-countdown-circle mb-5"></div> -->
         <!-- <button class="mt-5">Lihat Undangan</button> -->
-         <a href="#home" class="btn btn-lg mt-5 tombol" onclick="scrollEnable()">Lihat Undangan</a>
+         <a href="#fadeout" class="btn btn-lg mt-5 tombol" onclick="scrollEnable()">Lihat Undangan</a>
       </main>
+    </section>
+
+
+     <section id="fadeout" class="fadeout">
+
+     
+      <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="image/fadeout/11.png" class="d-block w-100" alt="image1" />
+          </div>
+          <div class="carousel-item">
+            <img src="image/fadeout/12.png" class="d-block w-100" alt="image2" />
+          </div>
+          <div class="carousel-item">
+            <img src="image/fadeout/10.png" class="d-block w-100" alt="image3" />
+          </div>
+        </div>
+      </div>
+       <!-- OVERLAY -->
+        <div class="overlay-content">
+
+          <span class="hero" style="text-transform: uppercase; font-weight: bold;">The Wedding of</span>
+       <h1 class=" hero py-3">Hamri & Nikel</h1>
+
+         <div class="simply-countdown-circle"></div>
+       </div>
+        </div>
     </section>
 
    
@@ -482,16 +510,16 @@
             rootElement.style.scrollbehavior = "smooth";
           }
 
-          // localStorage.setItem("open", "true");
+        localStorage.setItem("open", "true");
 
 
         }
 
-        // if(!localStorage.getItem("open")){
-        //    scrollDisable();
-        // }
+        if(!localStorage.getItem("open")){
+           scrollDisable();
+        }
 
-         scrollDisable();
+        //  scrollDisable();
 
        
 
