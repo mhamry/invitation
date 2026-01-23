@@ -28,7 +28,8 @@
         <h4>Kepada YTH. <br> Bapak/Ibu/saudara/i:</h4>
         <br><br>
         <!-- <div class="simply-countdown-circle mb-5"></div> -->
-        <button class="mt-5">Lihat Undangan</button>
+        <!-- <button class="mt-5">Lihat Undangan</button> -->
+         <a href="#home" class="btn btn-lg mt-5 tombol" onclick="scrollEnable()">Lihat Undangan</a>
       </main>
     </section>
 
@@ -455,13 +456,46 @@
 
     <!-- script fulldcreen -->
      <script>
-$(document).on('click', '[data-toggle="lightbox"]', function (event) {
-  event.preventDefault();
-  $(this).ekkoLightbox({
-    alwaysShowClose: true
-  });
-});
-</script>
+      $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox({
+          alwaysShowClose: true
+        });
+      });
+    </script>
+
+      <script>
+        const rootElement = document.querySelector(":root");
+
+        function scrollDisable(){
+          scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+          window.onscroll = function(){
+            window.scrollTo(scrollTop,scrollLeft)
+          }
+
+          rootElement.style.scrollbehavior = "auto";
+        }
+
+        function scrollEnable(){
+          window.onscroll = function(){    
+            rootElement.style.scrollbehavior = "smooth";
+          }
+
+          // localStorage.setItem("open", "true");
+
+
+        }
+
+        // if(!localStorage.getItem("open")){
+        //    scrollDisable();
+        // }
+
+         scrollDisable();
+
+       
+
+      </script>
 
   </body>
 </html>
