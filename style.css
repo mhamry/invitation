@@ -75,7 +75,8 @@ h1 {
 .home h2,
 .story h2,
 .info h2,
-.galery h2 {
+.galery h2,
+.rsvp h2 {
   font-size: 6rem;
   font-family: "Sacramento", cursive;
   color: var(--pink);
@@ -306,6 +307,53 @@ h1 {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
+.rsvp {
+  background-color: black;
+  padding: 100px 0;
+}
+
+.rsvp p {
+  color: white;
+}
+.rsvp form input,
+.rsvp form select {
+  padding: 10px 7px;
+  box-sizing: border-box;
+}
+
+.rsvp form label {
+  color: white;
+}
+
+.audio-icon {
+  position: fixed;
+  bottom: 0.2rem;
+  right: 1rem;
+  font-size: 4rem;
+  color: white;
+  mix-blend-mode: difference;
+  cursor: pointer;
+  animation: rotating 4s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  line-height: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 578px) {
   html {
     font-size: 55%;
@@ -452,7 +500,7 @@ h1 {
   }
 
   /* fullscreen di hp */
-  .lightbox .modal-dialog {
+  /* .lightbox .modal-dialog {
     margin: 0;
     max-width: 100%;
     width: 100%;
@@ -474,7 +522,7 @@ h1 {
   .lightbox img {
     max-height: 100vh;
     width: auto;
-  }
+  } */
 
   .carousel-fade .carousel-item {
     opacity: 0;

@@ -27,16 +27,16 @@
         <h1 class="py-3">Hamri & Nikel</h1>
         <h4>Kepada YTH. <br> Bapak/Ibu/saudara/i:</h4>
         <br><br>
-        <!-- <div class="simply-countdown-circle mb-5"></div> -->
-        <!-- <button class="mt-5">Lihat Undangan</button> -->
+      
          <a href="#fadeout" class="btn btn-lg mt-5 tombol" onclick="scrollEnable()">Lihat Undangan</a>
       </main>
     </section>
 
 
-     <section id="fadeout" class="fadeout">
+          
 
-     
+
+     <section id="fadeout" class="fadeout">  
       <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -261,61 +261,61 @@
         <div class="row justify-content-center text-center">
          
           <div class="col-lg-6 col-6">
-            <a href="image/utama/1.png">
+            <a href="image/utama/1.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/1.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/2.png">
+            <a href="image/utama/2.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/2.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/3.png">
+            <a href="image/utama/3.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/3.png" alt="" class="img-fluid">
             </a>
           </div>
-          <div class="col-lg-6 col-6">
+          <div class="col-lg-6 col-6" data-toggle="lightbox" data-caption="This describes the image">
             <a href="image/utama/4.png">
               <img src="image/thumbnail/4.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/5.png">
+            <a href="image/utama/5.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/5.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/6.png">
+            <a href="image/utama/6.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/6.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/7.png">
+            <a href="image/utama/7.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/7.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/8.png">
+            <a href="image/utama/8.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/8.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/9.png">
+            <a href="image/utama/9.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/9.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/10.png">
+            <a href="image/utama/10.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/10.png" alt="" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-6 col-6">
-            <a href="image/utama/11.png">
+            <a href="image/utama/11.png" data-toggle="lightbox" data-caption="This describes the image">
               <img src="image/thumbnail/11.png" alt="" class="img-fluid">
             </a>
           </div>
-          <div class="col-lg-6 col-6">
+          <div class="col-lg-6 col-6" data-toggle="lightbox" data-caption="This describes the image"s>
             <a href="image/utama/12.png">
               <img src="image/thumbnail/12.png" alt="" class="img-fluid">
             </a>
@@ -423,8 +423,60 @@
           </div>
           </div>
         </div>
+      </div>    
+    </section>
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+         <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">      
+            <h2>Konfirmasi Kehadiran</h2>
+            <p class="mb-5">Silahkan isi form Konfirmasi kedairan di bawah ini</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col px-5">
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+            <div class="col-12">
+             <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama">
+            </div>
+            <div class="col-12">
+             <div class="mb-3">
+              <label for="jumlah" class="form-label">Jumlah</label>
+              <input type="number" class="form-control" id="jumlah" name="jumlah">
+            </div>
+            <div class="col-12">
+             <div class="mb-3">
+              <label for="status" class="form-label">Konfirmasi</label>
+             <select name="status" id="status" class="form-select">
+              <option selected>Pilh salah satu satus kehadiran</option>
+              <option value="hadir">Hadir</option>
+              <option value="tidak hadir">Tidak Hadir</option>
+             </select>
+            </div>
+            </div>
+            <div class="col-12">
+             <div class="mb-3">
+             <button type="submit" class="btn btn-lg btn-primary" name="kirim">Kirim</button>
+            </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-      
+    </section>
+
+    <section class="audio-icon" style="display: none;">
+      <audio class="song" autoplay loop>
+        <source src="audio/song.mp3">
+      </audio>
+      <div class="icon-wrapper">
+        <i class="bi bi-disc"></i>
+      </div>
+
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -494,6 +546,16 @@
 
       <script>
         const rootElement = document.querySelector(":root");
+        const heroSection = document.getElementById("hero");
+        const tombol = document.querySelector(".tombol");
+        const song = document.querySelector(".song");
+        const audioIcon = document.querySelector(".audio-icon");
+        const iconWrapper = document.querySelector(".icon-wrapper i")
+        isPlaying = false;
+      
+        tombol.addEventListener("click", function(){
+          heroSection.style.display = "none";
+        })
 
         function scrollDisable(){
           scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -506,20 +568,47 @@
         }
 
         function scrollEnable(){
+          
+          heroSection.style.display = "none";
           window.onscroll = function(){    
-            rootElement.style.scrollbehavior = "smooth";
+            rootElement.style.scrollBehavior = "smooth";
+           
+          }
+          audioIcon.style.display = "flex"
+          playSong()
+        // localStorage.setItem("open", "true");  
+        }
+        // if(!localStorage.getItem("open")){
+        //     scrollDisable();
+        //  }
+
+         scrollDisable();
+
+
+         function playSong(){
+          song.play()
+        }
+
+        audioIcon.addEventListener("click", function(){
+          if(isPlaying){
+            song.pause();
+            isPlaying = false;
+            iconWrapper.classList.remove("bi-disc");
+            iconWrapper.classList.add("bi-pause-circle-fill");
+          } else{
+            song.play();
+            isPlaying = true;
+            iconWrapper.classList.add("bi-disc");
+            iconWrapper.classList.remove("bi-pause-circle-fill");
+
           }
 
-        localStorage.setItem("open", "true");
+         
+        })
 
 
-        }
+       
 
-        if(!localStorage.getItem("open")){
-           scrollDisable();
-        }
-
-        //  scrollDisable();
 
        
 
