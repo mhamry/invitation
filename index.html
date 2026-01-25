@@ -23,9 +23,8 @@
   <body>
     <section class="hero w-100 h-100 p-3 d-flex justify-content-center align-content-center text-center" id="hero">
       <main class="">
-        <span style="text-transform: uppercase; font-weight: bold;">The Wedding of</span>
         <h1 class="py-3">Hamri & Nikel</h1>
-        <h4>Kepada YTH. <br> Bapak/Ibu/saudara/i:</h4>
+        <h4>Kepada YTH. <br> <span class="fs-1">Bapak/Ibu/saudara/i:</span></h4>
         <br><br>
       
          <a href="#fadeout" class="btn btn-lg mt-5 tombol" onclick="scrollEnable()">Lihat Undangan</a>
@@ -535,14 +534,14 @@
     </script>
 
     <!-- script fulldcreen -->
-     <script>
+     <!-- <script>
       $(document).on('click', '[data-toggle="lightbox"]', function (event) {
         event.preventDefault();
         $(this).ekkoLightbox({
           alwaysShowClose: true
         });
       });
-    </script>
+    </script> -->
 
       <script>
         const rootElement = document.querySelector(":root");
@@ -604,7 +603,44 @@
           }
 
          
-        })
+        });
+       
+
+         //ambol data di url
+        // const urlParams = new URLSearchParams(window.location.search);
+        // const nama = urlParams.get("n") || "Tamu Undangan";
+        // const pronoun = urlParams.get("p") || "Bpk/Ibu/saudara/i" ;
+
+        // // console.log(window.location.href);
+        // // console.log(window.location.search);
+
+
+        // const namaElement = document.querySelector("#hero main h4 span");
+        // namaElement.innerText = `${pronoun} ${nama}`;
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const namaParam = urlParams.get("n");
+        const pronounParam = urlParams.get("p");
+
+        // simpan jika ada di URL
+        if (namaParam) localStorage.setItem("nama", namaParam);
+        if (pronounParam) localStorage.setItem("pronoun", pronounParam);
+
+        // ambil dari storage
+        const nama = localStorage.getItem("nama") || "Tamu Undangan";
+        const pronoun = localStorage.getItem("pronoun") || "Bapak/Ibu";
+
+        document.querySelector("#hero main h4 span").innerText = `${pronoun} ${nama}`;
+
+
+     
+
+
+      
+
+
+
 
 
        
