@@ -439,17 +439,17 @@
             <div class="col-12">
              <div class="mb-3">
               <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama">
+              <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
             <div class="col-12">
              <div class="mb-3">
               <label for="jumlah" class="form-label">Jumlah</label>
-              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="4" value="1">
+              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="4" value="1" required>
             </div>
             <div class="col-12">
              <div class="mb-3">
               <label for="status" class="form-label">Konfirmasi</label>
-             <select name="status" id="status" class="form-select">
+             <select name="status" id="status" class="form-select" required>
               <option value="" disabled selected>Pilh salah satu satus kehadiran</option>
               <option value="hadir">Hadir</option>
               <option value="tidak hadir">Tidak Hadir</option>
@@ -650,6 +650,7 @@
             })
             .then(() => {
               alert("Data berhasil dikirim, Terima kasih!");
+              form.reset();
             })
           });
         });
@@ -657,6 +658,7 @@
       </script>
 
        <script>
+      
       document.getElementById("btnLihat").addEventListener("click", () => {
         const password = prompt("Masukkan password:");
 
@@ -688,6 +690,7 @@
             });
 
             document.getElementById("dataWrapper").classList.remove("d-none");
+           
           })
           .catch(() => alert("Gagal mengambil data"));
       });
