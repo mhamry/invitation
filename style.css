@@ -584,5 +584,13 @@ h1 {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
   }
 
-  /* COUNTDOWN */
+  .rsvp form input {
+    font-size: 100%;
+  }
+  .rsvp form select {
+    font-size: 100%;
+  }
+  .rsvp form label {
+    font-size: 100%;
+  }
 }

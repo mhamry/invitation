@@ -36,7 +36,7 @@
 
 
      <section id="fadeout" class="fadeout">  
-      <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div id="carouseFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="image/fadeout/11.png" class="d-block w-100" alt="image1" />
@@ -435,7 +435,7 @@
 
         <div class="row justify-content-center">
           <div class="col px-5">
-            <form class="row row-cols-lg-auto g-3 align-items-center">
+            <form class="row row-cols-lg-auto g-3 align-items-center" action="https://script.google.com/macros/s/AKfycbxqktlFHsviGkuYfxLVGVSJWl-j9eFI1QUR0WUcwu3OiclFHN0pUDZLb1G3ZX9wRGGETQ/exec" method="POST" id="my-form">
             <div class="col-12">
              <div class="mb-3">
               <label for="nama" class="form-label">Nama</label>
@@ -444,13 +444,13 @@
             <div class="col-12">
              <div class="mb-3">
               <label for="jumlah" class="form-label">Jumlah</label>
-              <input type="number" class="form-control" id="jumlah" name="jumlah">
+              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="4" value="1">
             </div>
             <div class="col-12">
              <div class="mb-3">
               <label for="status" class="form-label">Konfirmasi</label>
              <select name="status" id="status" class="form-select">
-              <option selected>Pilh salah satu satus kehadiran</option>
+              <option value="" disabled selected>Pilh salah satu satus kehadiran</option>
               <option value="hadir">Hadir</option>
               <option value="tidak hadir">Tidak Hadir</option>
              </select>
@@ -464,7 +464,28 @@
 
           </div>
         </div>
+        <div class="row justify-content-center">
+          <div class="col">
+            <div class="text-center mt-5 mb-5">
+              <button class="btn btn-outline-light" id="btnLihat">Lihat Data Kehadiran</button>
+            </div>
 
+            <div class="mt-4 d-none" id="dataWrapper">
+              <div class="table-responsive" style="max-height: 300px; overflow-y: auto">
+                <table class="table table-dark table-striped align-middle">
+                  <thead class="sticky-top bg-black">
+                    <tr>
+                      <th>Nama</th>
+                      <th>Jumlah</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dataBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -533,15 +554,7 @@
       });
     </script>
 
-    <!-- script fulldcreen -->
-     <!-- <script>
-      $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-        event.preventDefault();
-        $(this).ekkoLightbox({
-          alwaysShowClose: true
-        });
-      });
-    </script> -->
+   
 
       <script>
         const rootElement = document.querySelector(":root");
@@ -606,17 +619,7 @@
         });
        
 
-         //ambol data di url
-        // const urlParams = new URLSearchParams(window.location.search);
-        // const nama = urlParams.get("n") || "Tamu Undangan";
-        // const pronoun = urlParams.get("p") || "Bpk/Ibu/saudara/i" ;
-
-        // // console.log(window.location.href);
-        // // console.log(window.location.search);
-
-
-        // const namaElement = document.querySelector("#hero main h4 span");
-        // namaElement.innerText = `${pronoun} ${nama}`;
+        
 
         const urlParams = new URLSearchParams(window.location.search);
 
@@ -633,22 +636,65 @@
 
         document.querySelector("#hero main h4 span").innerText = `${pronoun} ${nama}`;
 
-
-     
-
-
-      
-
-
-
-
-
-       
-
-
-       
-
       </script>
+
+
+<script>
+      window.addEventListener("load", function () {
+        const form = document.getElementById("my-form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: "POST",
+            body: data,
+          }).then(() => {
+            alert("Konfirmasi Kehadiran sudah terkirim");
+          });
+        });
+      });
+    </script>
+
+
+<script>
+      document.getElementById("btnLihat").addEventListener("click", () => {
+        const password = prompt("Masukkan password:");
+
+        if (!password) return;
+
+        fetch("https://script.google.com/macros/s/AKfycbxqktlFHsviGkuYfxLVGVSJWl-j9eFI1QUR0WUcwu3OiclFHN0pUDZLb1G3ZX9wRGGETQ/exec?password=" + password)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.error) {
+              alert("Password salah!");
+              return;
+            }
+
+            const tbody = document.getElementById("dataBody");
+            tbody.innerHTML = "";
+
+            data.forEach((row, i) => {
+              const tanggal = row.Date ? new Date(row.Date).toLocaleString("id-ID") : "-";
+
+              tbody.innerHTML += `
+        <tr>
+          
+          <td>${row.nama}</td>
+          <td>${row.jumlah}</td>
+          <td>${row.status}</td>
+         
+        </tr>
+      `;
+            });
+
+            document.getElementById("dataWrapper").classList.remove("d-none");
+          })
+          .catch(() => alert("Gagal mengambil data"));
+      });
+    </script>
+
+    
 
   </body>
 </html>
