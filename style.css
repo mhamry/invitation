@@ -325,6 +325,11 @@ h1 {
   color: white;
 }
 
+.rsvp button {
+  background: var(--pink);
+  margin-bottom: -36px;
+}
+
 .audio-icon {
   position: fixed;
   bottom: 0.2rem;

@@ -435,7 +435,7 @@
 
         <div class="row justify-content-center">
           <div class="col px-5">
-            <form class="row row-cols-lg-auto g-3 align-items-center" action="https://script.google.com/macros/s/AKfycbxqktlFHsviGkuYfxLVGVSJWl-j9eFI1QUR0WUcwu3OiclFHN0pUDZLb1G3ZX9wRGGETQ/exec" method="POST" id="my-form">
+            <form class="row row-cols-lg-auto g-3 align-items-center" action="https://script.google.com/macros/s/AKfycbx7-HFqEYmp9AoflOSVyh3Ce3cbmlDTZlbu4CnizDlsjZ0PNEnxKgbi2oIHTVIhHmIzEQ/exec" method="POST" id="my-form">
             <div class="col-12">
              <div class="mb-3">
               <label for="nama" class="form-label">Nama</label>
@@ -466,8 +466,8 @@
         </div>
         <div class="row justify-content-center">
           <div class="col">
-            <div class="text-center mt-5 mb-5">
-              <button class="btn btn-outline-light" id="btnLihat">Lihat Data Kehadiran</button>
+            <div class="text-center mt-5 mb-5" style="margin-bottom: 5rem;">
+              <button type="button" class="btn btn-outline-light" id="btnLihat">Lihat Data Kehadiran</button>
             </div>
 
             <div class="mt-4 d-none" id="dataWrapper">
@@ -598,7 +598,7 @@
 
 
          function playSong(){
-          song.play()
+          song.play();
         }
 
         audioIcon.addEventListener("click", function(){
@@ -637,33 +637,32 @@
         document.querySelector("#hero main h4 span").innerText = `${pronoun} ${nama}`;
 
       </script>
-
-
-<script>
-      window.addEventListener("load", function () {
-        const form = document.getElementById("my-form");
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const data = new FormData(form);
-          const action = e.target.action;
-          fetch(action, {
-            method: "POST",
-            body: data,
-          }).then(() => {
-            alert("Konfirmasi Kehadiran sudah terkirim");
+      <script>
+         window.addEventListener("load", function() {
+          const form = document.getElementById('my-form');
+          form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const action = e.target.action;
+            fetch(action, {
+              method: 'POST',
+              body: data,
+            })
+            .then(() => {
+              alert("Data berhasil dikirim, Terima kasih!");
+            })
           });
         });
-      });
-    </script>
 
+      </script>
 
-<script>
+       <script>
       document.getElementById("btnLihat").addEventListener("click", () => {
         const password = prompt("Masukkan password:");
 
         if (!password) return;
 
-        fetch("https://script.google.com/macros/s/AKfycbxqktlFHsviGkuYfxLVGVSJWl-j9eFI1QUR0WUcwu3OiclFHN0pUDZLb1G3ZX9wRGGETQ/exec?password=" + password)
+        fetch("https://script.google.com/macros/s/AKfycbx7-HFqEYmp9AoflOSVyh3Ce3cbmlDTZlbu4CnizDlsjZ0PNEnxKgbi2oIHTVIhHmIzEQ/exec?password=" + password)
           .then((res) => res.json())
           .then((data) => {
             if (data.error) {
@@ -693,6 +692,11 @@
           .catch(() => alert("Gagal mengambil data"));
       });
     </script>
+     
+
+
+
+
 
     
 
