@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Undangan Pernikahan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Georgia, serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow: hidden; /* scroll terkunci awal */
+      }
+
+      /* ================= LANDING ATAS ================= */
+      .landing-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e") center/cover;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 10;
+        transition: transform 1s ease-in;
+      }
+
+      .landing-top.hide {
+        transform: translateY(-100vh);
+      }
+
+      .landing-top h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .landing-top p {
+        margin-bottom: 30px;
+      }
+
+      .btn-open {
+        padding: 15px 35px;
+        border-radius: 30px;
+        border: none;
+        background: #d4af37;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .btn-open:hover {
+        background: #b8962e;
+      }
+
+      /* ================= LANDING BAWAH ================= */
+      .landing-bottom {
+        min-height: 100vh;
+        background: #fafafa;
+        padding: 60px 20px;
+      }
+
+      .section {
+        max-width: 700px;
+        margin: auto;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      .section h2 {
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .section p {
+        line-height: 1.8;
+        color: #555;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- LAPISAN ATAS -->
+    <section class="landing-top" id="landingTop">
+      <div>
+        <h1>Undangan Pernikahan</h1>
+        <p>Ahmad & Aisyah</p>
+        <button class="btn-open" id="openBtn">💌 Lihat Undangan</button>
+      </div>
+    </section>
+
+    <!-- LAPISAN BAWAH -->
+    <section class="landing-bottom">
+      <div class="section">
+        <h2>Assalamu’alaikum</h2>
+        <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami.</p>
+      </div>
+
+      <div class="section">
+        <h2>Akad Nikah</h2>
+        <p>
+          Minggu, 12 Mei 2026<br />
+          Pukul 08.00 WIB
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Resepsi</h2>
+        <p>
+          Minggu, 12 Mei 2026<br />
+          Pukul 11.00 WIB – selesai
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Terima Kasih</h2>
+        <p>Kehadiran Anda merupakan kebahagiaan bagi kami.</p>
+      </div>
+    </section>
+
+    <script>
+      const btn = document.getElementById("openBtn");
+      const landingTop = document.getElementById("landingTop");
+
+      btn.addEventListener("click", () => {
+        landingTop.classList.add("hide");
+
+        // buka scroll setelah animasi
+        setTimeout(() => {
+          document.body.style.overflow = "auto";
+        }, 900);
+      });
+    </script>
+  </body>
+</html>

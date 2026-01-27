@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Undangan Pernikahan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Georgia", serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow: hidden; /* scroll dikunci di awal */
+      }
+
+      /* ================= LANDING PAGE ================= */
+      .landing {
+        height: 100vh;
+        width: 100%;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e") center/cover;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .landing h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .landing p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .btn-undangan {
+        padding: 15px 35px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        background: #d4af37;
+        color: #000;
+        transition: 0.3s;
+      }
+
+      .btn-undangan:hover {
+        background: #b8962e;
+      }
+
+      /* ================= ISI UNDANGAN ================= */
+      .content {
+        min-height: 100vh;
+        background: #fafafa;
+        padding: 60px 20px;
+      }
+
+      .section {
+        max-width: 700px;
+        margin: auto;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      .section h2 {
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .section p {
+        color: #555;
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- LANDING PAGE -->
+    <section class="landing" id="landing">
+      <h1>Undangan Pernikahan</h1>
+      <p>Ahmad & Aisyah</p>
+      <button class="btn-undangan" id="btnOpen">💌 Lihat Undangan</button>
+    </section>
+
+    <!-- ISI UNDANGAN -->
+    <section class="content" id="undangan">
+      <div class="section">
+        <h2>Assalamu’alaikum</h2>
+        <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami.</p>
+      </div>
+
+      <div class="section">
+        <h2>Akad Nikah</h2>
+        <p>
+          Minggu, 12 Mei 2026 <br />
+          Pukul 08.00 WIB <br />
+          Masjid Agung Al-Barokah
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Resepsi</h2>
+        <p>
+          Minggu, 12 Mei 2026 <br />
+          Pukul 11.00 WIB – selesai <br />
+          Gedung Serbaguna
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Terima Kasih</h2>
+        <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+      </div>
+    </section>
+
+    <script>
+      const btn = document.getElementById("btnOpen");
+
+      btn.addEventListener("click", function () {
+        // aktifkan scroll
+        document.body.style.overflow = "auto";
+
+        // geser halaman ke section undangan
+        document.getElementById("undangan").scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
